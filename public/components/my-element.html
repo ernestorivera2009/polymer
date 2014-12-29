@@ -1,19 +1,36 @@
 <!-- Import Polymer -->
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
+<!-- Import Core Elements -->
+<link rel="import" href="../bower_components/core-list/core-list.html">
+
 <!-- Import Item card -->
 <link rel="import" href="item-card.html">
 
 <!-- Define your custom element -->
 <polymer-element name="my-element" attributes="data">
-
     <template>
-    <h1>My Polymer Element</h1>
+
+        <core-list data="{{data}}">
+          <template>
+            <div class="row {{ {selected: selected} | tokenList }}">
+              List row: {{index}}, Page url from model: {{model.pageUrl}}
+            </div>
+          </template>
+        </core-list>
+
         {{data}}
 
         <template repeat="{{values, i in data.data}}">
             <h4>Value {{i}}: {{values.value}}</h4>
             <item-card val="{{values.value}}"></item-card>
+
+            <div horizontal layout>
+              <div>One</div>
+              <div>Two</div>
+              <div>Three</div>
+            </div>
+
         </template>
 
     </template>
@@ -66,5 +83,7 @@
             }
         });
     </script>
+
+
 
 </polymer-element>

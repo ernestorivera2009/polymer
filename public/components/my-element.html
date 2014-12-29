@@ -5,10 +5,11 @@
 <link rel="import" href="item-card.html">
 
 <!-- Define your custom element -->
-<polymer-element name="my-element">
+<polymer-element name="my-element" attributes="data">
 
     <template>
     <h1>My Polymer Element</h1>
+        {{data}}
 
         <template repeat="{{values, i in data.data}}">
             <h4>Value {{i}}: {{values.value}}</h4>

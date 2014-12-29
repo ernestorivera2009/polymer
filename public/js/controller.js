@@ -41,7 +41,7 @@ app.controller("Page", ["$scope", "safeApply", "ioconfig", "ioquery", "ioapi",
 
 		// Setup a simple fail handler to deal with any issues we may have
 		var fail = function(text) {
-			alert(text);
+			console.log("Failure: " + text);
 			$scope.formLoading = false;
 			safeApply($scope);
 		}
@@ -58,7 +58,32 @@ app.controller("Page", ["$scope", "safeApply", "ioconfig", "ioquery", "ioapi",
 			// Next, download the snapshot data from the crawler. This is the last crawl's output
 			ioapi.bucket("connector").object($scope.sourceGuid).plugin("attachment", "GET", { "object": "snapshot/" + source.snapshot }).done(function(data) {
 				// Pick out the bits of the data we need and put them in the model
-				$scope.data = data.tiles[0].results[0].pages;
+				
+				var compact = [];
+				var i = 0;
+				console.log(data.tiles[0].results[0].pages);
+				_.map(data.tiles[0].results[0].pages, function(elem) {
+					var strDesc = elem.results[0].description;
+					strDesc = escape(strDesc);
+					//strDesc = "dddd";
+					console.log(strDesc);
+
+					var obj = {
+						index: i,
+						name: elem.results[0].name,
+						description: strDesc, //String(elem.results[0].description),
+						image: elem.results[0].pic,
+						date_joined: elem.results[0].date_joined,
+						loc: elem.results[0].loc
+					};
+
+					compact.push(obj);
+					i++;
+				});
+
+				//$scope.data = data.tiles[0].results[0].pages;
+				$scope.data = compact;
+
 				if ($scope.data.length > 500) {
 					$scope.data = $scope.data.slice(0, $scope.maxRows);
 				}
@@ -74,5 +99,8 @@ app.controller("Page", ["$scope", "safeApply", "ioconfig", "ioquery", "ioapi",
 			fail("Unable to load data source. Please check your User GUID, API key, and data source GUID");
 		});
 	}
+
+	//Preload data
+	$scope.getData();
 
 }]);

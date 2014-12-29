@@ -1,13 +1,17 @@
-Polymer Meetup - Jan 2014
+Mobile DC
 =======
+
+Polymer Meetup - Jan 2014
+-------
 
 Prerequisites
-=======
-*nix OS
-Node
+-------
+* *nix OS
+* NodeJS
+* Bower
 
 System Setup
-=======
+-------
 * `git clone https://github.com/mobiledc/polymer`
 * `cd polymer`
 * `npm install`
@@ -15,7 +19,7 @@ System Setup
 * `bower install`
 
 Add Your Import.IO API Keys
-=======
+-------
 * `cd public/js`
 * `Edit apikeys.js like so:`
 
@@ -28,5 +32,10 @@ var IMPORT_IO_KEYS = {
 ```
 
 Run the server
-=======
+-------
 * `node index.js`
+
+Open a browser
+-------
+* Navigate to http://localhost:5000
+* You should see a Polymer app

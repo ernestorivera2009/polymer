@@ -7,12 +7,14 @@ Polymer Meetup - Jan 2014
 Setup
 =======
 npm install
-cd public && bower install
+cd public
+bower install
 
 Add Your API Keys
 =======
 cd public/js
 edit apikeys.js like so:
+
 ```var IMPORT_IO_KEYS = {
     userGuid    : "YOUR_USER_GUID",
     apiKey      : "YOUR_API_KEY",
@@ -23,5 +25,3 @@ edit apikeys.js like so:
 Run the Node server
 =======
 node index.js
-
-

@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="http://www.kinoscribe.com/components/platform/platform.js"></script>
+        <link rel="import" href="http://www.kinoscribe.com/components/kinoscribe/kinoscribe.html">
+
+        <style>
+        	kino-slide .slide {
+		    	display: block;
+		    	width: 600px;
+		     	height: 400px;
+		     	padding: 40px 60px;
+		     	border: 1px solid grey;
+		     	border-radius: 10px;
+		     	box-shadow: 4px 4px 6px grey;
+		     	color:grey;
+		     	text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+		     	font-family:'Open Sans', Arial, sans-serif;
+		     	font-size: 30px;
+		     	line-height: 36px;
+		     	letter-spacing: -1px;
+		 	}
+        </style>
+
+    </head>
+
+    <body>
+	    <kino-pres>
+	        <kino-slide x="1000" y="500" z="1000">
+	            <section class="slide">
+	                <h1>Slide 1</h1>
+	                <p>x = 1000</p>
+	            </section>
+	        </kino-slide>
+
+	        <kino-slide x="2000" rotateZ="90" scale="0.5">
+	            <section class="slide">
+	            	<h1>Slide 2</h1>
+	                <p>x = 2000</p>
+	            </section>
+	        </kino-slide>
+	        <kino-slide x="2000" y="1000" rotateZ="180">
+	            <section class="slide">
+	               	<h1>Slide 3</h1>
+	                <p>x = 2000</p>
+	                <p>y = 1000</p>
+	            </section>
+	        </kino-slide>
+	    </kino-pres>
+	</body>    
+</html> 

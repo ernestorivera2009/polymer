@@ -1,8 +1,5 @@
-Mobile DC
+Mobile DC :: Polymer Meetup - Jan 2014
 =======
-
-Polymer Meetup - Jan 2014
--------
 
 Prerequisites
 -------
@@ -20,24 +17,22 @@ System Setup
 * `$ cd example-advanced/public`
 * `$ bower install`
 
-Running the Examples
--------
 
-Simple Examples
-======
+Running the Simple Examples
+------
 * `$ cd example-simple`
 * `$ node index.js`
 * Single element example: launch Chrome and navigate to `http://localhost:5000/index-single.html`
 * Nested elements example: launch Chrome and navigate to `http://localhost:5000/index-nested.html`
 
-Advanced Example
-======
+Running the Advanced Example
+-----
 * `$ cd example-advanced`
 * `$ node index.js`
 * Single element example: launch Chrome and navigate to `http://localhost:5000/index.html`
 
 Add Your Import.IO API Keys
-======
+------
 * `$ cd example-advanced/public/js`
 * Edit `apikeys.js` like so:
 
@@ -48,3 +43,8 @@ var IMPORT_IO_KEYS = {
     sourceGuid  : "DATA_SOURCE_GUID"
 };
 ```
+
+Running the KinoScribe Presentation Example
+-----
+* `$ cd example-presentation`
+* Launch Chrome and navigate to `file:///...path...polymer/example-presentation/index.html`*

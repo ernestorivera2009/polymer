@@ -1,5 +1,5 @@
-app.controller("Page", ["$scope", "safeApply", "ioconfig", "ioquery", "ioapi",
-	function($scope, safeApply, ioconfig, ioquery, ioapi) {
+app.controller("Page", ["$scope", "$timeout", "safeApply", "ioconfig", "ioquery", "ioapi",
+	function($scope, $timeout, safeApply, ioconfig, ioquery, ioapi) {
 
 	// Model values for the form
 	$scope.userGuid = IMPORT_IO_KEYS.userGuid;
@@ -101,6 +101,14 @@ app.controller("Page", ["$scope", "safeApply", "ioconfig", "ioquery", "ioapi",
 	}
 
 	//Preload data
-	$scope.getData();
+	$timeout(function() {
+		$scope.getData();	
+	}, 500);
+	
+	
 
-}]);
+}])
+
+.run(function() {
+	console.log("Controller bootstrap: ");
+});

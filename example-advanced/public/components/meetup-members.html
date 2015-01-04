@@ -22,9 +22,6 @@
 <link rel="import" href="../bower_components/paper-item/paper-item.html">
 <link rel="import" href="../bower_components/paper-input/paper-input.html">
 
-<!-- Import Item card -->
-<link rel="import" href="item-card.html">
-
 <!-- Define your custom element -->
 <polymer-element name="meetup-members" attributes="data" layout vertical relative>
     <template>
@@ -43,9 +40,9 @@
               color: white;
             }
             .avatar {
-              height: 40px;
-              width: 40px;
-              border-radius: 20px;
+              height: 60px;
+              width: 60px;
+              border-radius: 30px;
               box-sizing: border-box;
               border: 1px solid #DDD;
               background-color: #DDD;
@@ -54,10 +51,11 @@
               padding: 0 16px;
             }
             .primary {
-              font-size: 16px;
+              font-size: 24px;
+              font-weight: bold;
             }
             .secondary {
-              font-size: 14px;
+              font-size: 18px;
             }
             .dim {
               color: gray;
@@ -121,8 +119,8 @@
         </style>
 
         <paper-tabs class="tabs" selected="{{page}}" valueattr="name">
-            <paper-tab name="messages">Member List</paper-tab>
-            <paper-tab name="photos">Photos</paper-tab>
+            <paper-tab name="messages">List</paper-tab>
+            <paper-tab name="photos">Tiles</paper-tab>
         </paper-tabs>
 
         <core-animated-pages selected="{{page}}" id="pages" valueattr="id" flex>
@@ -134,9 +132,9 @@
                   <div class="message-item {{selected?'selected':''}}" layout horizontal>
                     <img class="avatar" src="{{model.image}}">
                     <div class="pad" flex layout vertical>
-                      <div class="primary">{{index}} {{model.name}}</div>
+                      <div class="primary">{{model.name}}</div>
                       <div class="secondary">{{model.loc}}</div>
-                      <div class="secondary dim Xclamp">{{model.description}}</div>
+                      <!-- <div class="secondary dim Xclamp">{{model.description}}</div> -->
                     </div>
                     <core-icon icon="{{model.boolean ? 'star' : 'star-outline'}}"></core-icon>
                   </div>

@@ -5,65 +5,35 @@
     <title>Polymer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-    <!-- Angular -->
-    <script src="bower_components/angular/angular.js"></script>
-
-    <!-- JQuery -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
 
     <!-- Lodash -->
 	<script src="bower_components/lodash/dist/lodash.js"></script>
 
-    <!-- Import.io JavaScript -->
-    <script src="js/importio.js"></script>
-
     <!-- JS Files -->
-    <script src="js/app.js"></script>
-    <script src="js/apikeys.js"></script>
-    <script src="js/controller.js"></script>
-    <script src="js/row.js"></script>
-    <script src="js/safeApply.js"></script>
-
 
     <!-- Import Web Component's Polyfill -->
     <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
 
-    <!-- Import Custom Elements -->
-    <link rel="import" href="components/meetup-members.html">
-
-     <style>
-	    html, body {
-	      margin: 0;
-	      -webkit-tap-highlight-color: transparent;
-	      overflow: hidden;
-	      user-select: none;
-	      -webkit-user-select: none;
-	      font-family: sans-serif;
-	    }
-
-	    meetup-members {
-          display: block;
-          height: 100%;
-          margin: 0 auto;
-        }
-	  </style>
+    <!-- Import Calculator Element -->
+    <link rel="import" href="components/calculator.html">
 
 </head>
 
-<body ng-app="ng-polymer" fit>
-	<span ng-controller="Page">
-    
-    	<!-- Using Custom Elements -->
-    	<meetup-members data="{{data}}"></meetup-members><br><br><br>
+<body fit>
 
-    	<ng-form name="ss">
-    		<button ng-click="getData()">Get data</button><br><br>
-    		<span ng-show="data.length > 10000">
-    			{{data}}
-    		</span>
-    	</ng-form>
-
-    </span>
+    <input type="text" id="num1" placeholder="Number"/>
+    <select name="op">
+        <option value="add">Add</option>
+        <option value="sub">Subtract</option>
+        <option value="mul">Multiply</option>
+        <option value="div">Divide</option>
+    </select>
+    <input type="text" id="num2" placeholder="Number"/>
+    =
+    <span>result</span>
+    <button>Calculate</button>
+	
+    <simple-calculator num1="1" num2="3" op="add"/>
 
 </body>
 </html>

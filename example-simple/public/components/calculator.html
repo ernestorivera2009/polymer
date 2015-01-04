@@ -1,0 +1,93 @@
+<!-- Import Polymer -->
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<!-- Define your custom element -->
+<polymer-element name="inner-calculator" attributes="num1, num2, op, result">
+
+    <style>
+    </style>
+
+    <template>
+       <!--  <p>I am the inner calculator element!</p>
+        <p>num1: {{num1}}</p>
+        <p>num2: {{num2}}</p>
+        <p>op: {{op}}</p>
+        <p>My result is {{result}}</p> -->
+    </template>
+    
+    <script>
+        Polymer('inner-calculator', {
+            calculate: function () {
+                var num1 = parseInt(this.num1) || 0;
+                var num2 = parseInt(this.num2) || 0;
+                var op = this.op || "add";
+                var result;
+
+                switch (op) {
+                    case "add":
+                        result = num1 + num2;
+                        break;
+                    case "sub":
+                        result = num1 - num2;
+                        break;
+                    case "mul":
+                        result = num1 * num2;
+                        break;
+                    case "div":
+                        result = num1/num2;
+                        break;    
+                    default:
+                        result = num1 + num2;
+                }
+                
+                //this.result = result;
+                //console.log("Op: " + op + " ---> Result: " + result);
+                return result;
+            },
+
+            // Watchers
+            num1Changed: function(oldValue, newValue) {
+                this.result = this.calculate();
+            },
+
+            num2Changed: function(oldValue, newValue) {
+                this.result = this.calculate();
+            },
+
+            opChanged: function(oldValue, newValue) {
+                this.result = this.calculate();
+            },
+
+            // Fires when an instance of the element is created
+            created: function() {
+            	//console.log(this.templateInstance + "I was created.");
+            },
+            
+            // Fires when the element’s initial set of children and siblings are guaranteed to exist
+            domReady: function() {
+            	//console.log("DOM is ready.");
+            },
+            
+            // Fires when the "<polymer-element>" has been fully prepared
+            ready: function() {
+            	//console.log("I am fully ready.");
+            },
+            
+            // Fires when the element was inserted into the document
+            attached: function() {
+            	//console.log("I was attached.");
+            },
+            
+            // Fires when the element was removed from the document
+            detached: function() {
+            	//console.log("I was detached.");
+            },
+            
+            // Fires when an attribute was added, removed, or updated
+            attributeChanged: function(attr, oldVal, newVal) {
+            	//console.log("Attribute changed.");
+            }
+        });
+    </script>
+
+</polymer-element>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Single Calculator :: Polymer Meetup :: Mobile DC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    <!-- Import Polymer -->
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+</head>
+
+<polymer-element name="single-calculator">
+    <template>
+        <style>
+            button, input, select, option {
+                border: solid 1px #000099;
+                font-family: Open sans;
+                font-size: 16px;
+                font-weight: bold;
+                margin: 10px;
+                padding: 10px;
+                width: 140px;
+            }
+            .result {
+                font-family: Open sans;
+                font-size: 20px;
+                font-weight: bold;
+                margin: 10px;
+                padding: 10px;   
+            }
+        </style>
+
+        <h2>Polymer Calculator (Single Component)</h2>
+
+        <input type="text" value="{{num1}}" placeholder="Number"/>
+
+        <select name="op" value="{{op}}">
+            <option value="add" selected>Add</option>
+            <option value="sub">Subtract</option>
+            <option value="mul">Multiply</option>
+            <option value="div">Divide</option>
+        </select>
+
+        <input type="text" value="{{num2}}" placeholder="Number"/>
+        
+        =
+        
+        <span class="result">{{result}}</span>
+        
+        <button class="r" on-click="{{calculate}}">Calculate</button>
+    </template>
+    
+    <script>
+        Polymer('single-calculator', {
+            calculate: function () {
+                var num1 = parseInt(this.num1) || 0;
+                var num2 = parseInt(this.num2) || 0;
+                var op = this.op || "add";
+                var result;
+
+                switch (op) {
+                    case "add":
+                        result = num1 + num2;
+                        break;
+                    case "sub":
+                        result = num1 - num2;
+                        break;
+                    case "mul":
+                        result = num1 * num2;
+                        break;
+                    case "div":
+                        result = num1/num2;
+                        break;    
+                    default:
+                        result = num1 + num2;
+                }
+                
+                this.result = result;
+                console.log("Op: " + op + " ---> Result: " + result);
+            },
+            
+            // Fires when an instance of the element is created
+            created: function() {
+                this.num1 = 20;
+                this.num2 = 5;
+                this.calculate();
+                // console.log(this.templateInstance + "I was created.");
+            },
+            
+            // Fires when the element’s initial set of children and siblings are guaranteed to exist
+            domReady: function() {
+                //console.log("DOM is ready.");
+            },
+            
+            // Fires when the "<polymer-element>" has been fully prepared
+            ready: function() {
+                //console.log("I am fully ready.");
+            },
+            
+            // Fires when the element was inserted into the document
+            attached: function() {
+                //console.log("I was attached.");
+            },
+            
+            // Fires when the element was removed from the document
+            detached: function() {
+                //console.log("I was detached.");
+            },
+            
+            // Fires when an attribute was added, removed, or updated
+            attributeChanged: function(attr, oldVal, newVal) {
+                //console.log("Attribute changed.");
+            }
+        });
+    </script>
+</polymer-element>
+
+<body>
+    <single-calculator/>
+
+    <!-- Uncomment the code block below. Code runs, but template dispayed only once. Why -->
+    <!-- 
+    <single-calculator/>
+    <single-calculator/> -->
+</body>
+</html>

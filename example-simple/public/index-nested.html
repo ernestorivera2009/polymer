@@ -36,7 +36,9 @@
 
         <h2>Polymer Calculator (Nested Component)</h2>
 
-        <inner-calculator result="{{res}}" num1="{{num1}}" num2="{{num2}}" op="{{op}}"></inner-calculator>
+        <inner-calculator result="{{res}}" num1="{{num1}}" num2="{{num2}}" op="{{op}}">
+            <h2>Inner content block</h2>
+        </inner-calculator>
 
         <input type="text" value="{{num1}}" placeholder="Number"/>
 
@@ -94,6 +96,6 @@
 </polymer-element>
 
 <body>
-    <outer-calculator/>
+    <outer-calculator>Hello</outer-calculator>
 </body>
 </html>

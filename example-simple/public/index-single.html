@@ -5,8 +5,11 @@
     <title>Single Calculator :: Polymer Meetup :: Mobile DC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
+    <!-- Import Web Components Polyfill -->
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+
     <!-- Import Polymer -->
-    <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="bower_components/polymer/polymer.html">
 </head>
 
 <polymer-element name="single-calculator">
@@ -116,11 +119,10 @@
 </polymer-element>
 
 <body>
-    <single-calculator/>
+    <single-calculator></single-calculator>
 
-    <!-- Uncomment the code block below. Code runs, but template dispayed only once. Why -->
-    <!-- 
-    <single-calculator/>
-    <single-calculator/> -->
+    <!-- Uncomment the code block below. Observe that each element has its own scope. -->
+    <!-- <single-calculator></single-calculator>
+    <single-calculator></single-calculator> -->
 </body>
 </html>

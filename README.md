@@ -48,3 +48,12 @@ Running the KinoScribe Presentation Example
 -----
 * `$ cd example-presentation`
 * Launch Chrome and navigate to `file:///...path...polymer/example-presentation/index.html`*
+
+Running the Mobile Example
+------
+* `$ npm install -g cca`
+* `$ cca checkenv`
+* `$ cca create example-mobile`
+* `$ cca platform add ios`
+* `$ cca emulate ios`
+* `$ cca run iOS`

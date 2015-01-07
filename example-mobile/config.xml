@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><widget xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" id="com.your.company.examplemobile" version="0.1.1">
     <name>example-mobile</name>
 
-    <description>Mobile DC Polymer Meetup Sample Mobile App</description>
+    <description>A Sample Chrome App</description>
 
-    <author>Author Name @gursesl</author>
+    <author>Author Name &lt;a@b.com></author>
 
     <preference name="KeyboardShrinksView" value="true"/>
     <preference name="StatusBarOverlaysWebView" value="false"/>

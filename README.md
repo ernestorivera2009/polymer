@@ -11,6 +11,9 @@ System Setup
 -------
 * `$ git clone https://github.com/mobiledc/polymer`
 * `$ cd polymer`
+* `$ cd example-simple`
+* `$ npm install`
+* `$ cd example-advanced`
 * `$ npm install`
 * `$ cd example-simple/public`
 * `$ bower install`
